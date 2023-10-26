@@ -1,1 +1,15 @@
-table th td {border: thin solid;}
+body {
+    background-color: rgb(212, 255, 255);
+}
+table {
+    margin: auto;
+    text-align: center;
+    width: 15%;
+    height: 70%;
+    border: thin solid;
+    background-color: white;
+}
+th {
+    border: thin solid;
+    background-color:rgb(230, 103, 191);
+}
