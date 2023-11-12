@@ -24,6 +24,7 @@ body {
     align-items: center; /*Items werden zentriert*/
     justify-content: space-between; /*Items gleichmäßig verteilen*/
     position: fixed; /*Nav bar bleibt auch beim scrollen oben angezeigt*/
+    box-shadow: 0 7px 7px -2px rgba(0,0,0,.2); /*Schatten unter der navbar*/
 }
 
 /*Flexbox style für die Hyperlinks definieren
