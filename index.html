@@ -11,7 +11,17 @@
 <div class="navbar">
     <h3><a href="#">Handgemachte Schätze</a></h3>
     <ul>
-        <li><input type="text" class="searchInput" placeholder="Suchen"></li>
+        <li>
+            <form action="#">
+                <select name="type" id="type">
+                    <option value="artist">Künstler</option>
+                    <option value="product">Produkt</option>
+                    <option value="category">Kategorie</option>
+                </select>
+                <input type="text" id="searchInput" class="searchInput" placeholder="Suchen">
+                <input type="submit" value="Suchen">
+            </form>
+        </li>
         <li><a href="#">Produkte</a></li>
         <li><a href="#">Kontakt</a></li>
         <li><a href="#">Whatever</a></li>
