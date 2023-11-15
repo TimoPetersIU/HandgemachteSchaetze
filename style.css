@@ -1,68 +1,141 @@
+/*
+
+Author: Timo Peters
+
+alle vom Browser automatisch gesetzten margin und padding auf 0px setzen
+Standart font der Website setzen */
 * {
+    margin: 0px;
+    padding: 0px;
     font-family: Helvetica, sans-serif;
 }
+
 body {
     background-color: lightgrey;
 }
 
+/*Größe und Farbe der navbar definieren.
+ Flexbox definieren*/
 .navbar {
     width: 100%;
-    height: 60px;
+    height: 80px;
     background-color: dimgray;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
+    align-items: center; /*Items werden zentriert*/
+    justify-content: space-between; /*Items gleichmäßig verteilen*/
+    position: fixed; /*Nav bar bleibt auch beim scrollen oben angezeigt*/
+    box-shadow: 0 7px 7px -2px rgba(0,0,0,.2); /*Schatten unter der navbar*/
 }
 
+/*Flexbox style für die Hyperlinks definieren
+- Abstand von 60px zwischen den Items
+- zentrieren der Items*/
+.navbar ul {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/*Style für das "Logo"*/
 .navbar h3 a {
     color: white;
-    margin-left: 20px;
+    margin-left: 20px; /*Margin um ein wenig Abstand zum Rand zu erzeugen*/
     font-size: 25px;
+    /*Definition des weißen Rahmens.
+    - Dicke des Rahmens
+    - Abstand zur Schrift
+    - abgerundete Ecken*/
     border: 1px solid white;
     padding: 4px 8px;
     border-radius: 7px;
 }
 
+/*
+- Blau und Unterstrich der Hyperlinks entfernen
+- Farbe soll weiß sein
+- Bei "hover" soll die font size mit einer 0.3s transition größér werden*/
 .navbar a {
     text-decoration: none;
     color: white;
     font-size: 17px;
+    transition: all 0.3s;
 }
 
+/*
+- Bei hover wir die font size um 2px erhöht
+- Auserdem wird das element unterstrichen
+*/
+.navbar li a:hover {
+    font-size: 19px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/*
+- entfernen der list style Elemente
+- Farbe auf weiß setzen
+*/
 .navbar li {
     list-style: none;
-    display: inline-block;
-    margin: 0px 20px;
     color: white;
 }
 
-.navbar li:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    cursor: pointer;
-}
-
+/*Definition des Warenkorb Button styles
+- Größe des Buttons und abstand zum rechten Rand definieren
+- Farbe definieren
+- Ecken abrunden
+- Bei hover soll die width und height ein wenig wachsen. Außerdem wird die Farbe ein wenig verändert
+*/
 .warenkorbBTN {
     margin-right: 50px;
     padding: 9px 25px;
-    background-color: rgba(0,136,169,1);
+    background-color: rgba(0, 136, 169, 1);
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s;
 }
 
 .warenkorbBTN:hover {
-    background-color: rgba(0,136,169,0.8);
+    background-color: rgba(0, 136, 169, 0.8);
+    padding: 12px 28px;
 }
 
+/*Definieren des Search input styles
+- Größe definieren
+- Ecken abrunden
+- bei focus soll das input Feld in einer 0.3s transition ein wenig größer werden
+*/
 .searchInput {
     height: 30px;
+    width: 150px;
     border: none;
-    border-radius: 50px;
+    border-radius: 60px;
+    transition: width 0.5s, height 0.3s;
 }
 
-.searchInput:focus{
+.searchInput:focus {
     outline: none;
+    height: 40px;
+    width: 180px;
+}
+
+iframe {
+    margin-top: 80px;
+    width: 100%;
+    height: 2000000px;
+}
+
+
+/*Media queries -> navbar soll responsive sein*/
+@media (max-width: 1024px) {
+    .navbar h3 a {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 938px) {
+    .navbar h3 a {
+        font-size: 10px;
+    }
 }
