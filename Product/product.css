@@ -33,7 +33,7 @@ a {
     text-decoration: none;
 }
 .cell {
-    text-align: left;
+    text-align: centers;
 }
 /*@keyframes test {
     0%{transform: translateX(-50%) scale(100%) rotate(0deg) translateY(1px);}
