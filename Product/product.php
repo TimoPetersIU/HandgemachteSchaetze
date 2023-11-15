@@ -9,6 +9,9 @@
 <body>
 
 <?php
+
+$_GET["id"];
+
 // Verbindung zur Datenbank herstellen
 $servername = "localhost";
 $username = "root";
@@ -23,7 +26,9 @@ if ($conn->connect_error) {
 }
 
 // SQL-Abfrage für Produkte
-$sql = "SELECT * FROM products WHERE id = 25"; // Hier kannst du die gewünschte Produkt-ID angeben
+
+$sql = "SELECT * FROM products join artists on  products.artist_name = artists.name where products.id = '".$conn->real_escape_string($_GET['id'])."'" ; // Hier kannst du die gewünschte Produkt-ID angeben
+
 $result = $conn->query($sql);
 
 // Überprüfen, ob Ergebnisse vorhanden sind
@@ -34,29 +39,38 @@ if ($result->num_rows > 0) {
     // HTML-Tabelle mit dynamischen Daten füllen
     echo '<table cellspacing="0" cellpadding="0">';
     echo '<tr>';
-    echo '<th colspan="3">' . $row['name'] . '</th>';
-    echo '</tr>';
-    echo '<tr>';
-    echo '<td colspan="3"><img src="' . $row['img_path'] . '" alt="bild von ' . $row['name'] . '"></td>';
+
+    echo '<th colspan="3">' . $row['pname'] . '</th>';
     echo '</tr>';
     echo '<tr class="cell">';
     echo '<td>' . $row['artist_name'] . '</td>';
-    echo '<td>' . $row['price'] . '</td>';
+    echo '<td>' . $row['price'] . '€</td>';
+
     echo '</tr>';
     echo '<tr>';
     echo '<td>' . $row['email'] . '</td>';
     echo '<td>' . $row['category'] . '</td>';
     echo '</tr>';
-    // Füge die restlichen Daten hinzu (Wohnort, Straße, usw.) nach Bedarf
-    // ...
+
+    echo '<tr>';
+    echo '<td colspan="3"><img src="../Bildes/' . $row['img_path'] . '" alt="bild von ' . $row['pname'] . '"></td>';
+    echo '</tr>';
+    echo '<tr>';
+    echo '<td colspan="3">' . $row['description'] . '</td>';
+    echo '</tr>';
+
     echo '</table>';
 } else {
     echo "Keine Ergebnisse gefunden";
 }
+
+// <p><a href="Product/product.php?id=25">cooles zeug</a></p>
 
 // Verbindung schließen
 $conn->close();
 ?>
 
 </body>
+
 </html>
+
