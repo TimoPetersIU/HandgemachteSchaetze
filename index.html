@@ -12,13 +12,13 @@
     <h3><a href="#">Handgemachte Schätze</a></h3>
     <ul>
         <li>
-            <form action="#">
+            <form action="searchbar.php" method="get">
                 <select name="type" id="type">
                     <option value="artist">Künstler</option>
                     <option value="product">Produkt</option>
                     <option value="category">Kategorie</option>
                 </select>
-                <input type="text" id="searchInput" class="searchInput" placeholder="Suchen">
+                <input type="text" name="searchInput" id="searchInput" class="searchInput" placeholder="Suchen">
                 <input type="submit" value="Suchen">
             </form>
         </li>
