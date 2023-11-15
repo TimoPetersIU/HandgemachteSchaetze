@@ -3,16 +3,7 @@
 <body>
 
 <?php
-$servername = "localhost";
-$user = "root";
-$password = "";
-$db = "HandgemachteSchaetze";
-
-$connection = new mysqli($servername, $user, $password, $db);
-
-if ($connection->connect_error) {
-    die("FAILED " . $connection->connect_error);
-}
+require("connection.php");
 $sql_insert = "INSERT INTO orders VALUES (DEFAULT)";
 $sql_select = "SELECT name FROM artists";
 $select_product_by_artist = "SELECT * from products WHERE artist_name='Benjamin Walker'";
