@@ -59,7 +59,12 @@ if ($result->num_rows > 0) {
     echo '<td colspan="3">' . $row['description'] . '</td>';
     echo '</tr>';
     echo '<tr>';
-    echo '<td colspan="3">'. $row['availability'] == 1 ? 'Nicht Vorhanden' : 'Vorhanden' . '</td>';
+    if ($row['availability'] == 1) {
+        echo '<td colspan="3">
+             Lagerbestand '. $row['availability'].'</td>'; }
+    else { 
+        echo'<td colspan="3">
+            Nicht auf Lager </td>';}  
     echo '</tr>';
     echo '<tr>';
     echo '<th colspan="1"><a href="../tabllenexperiment.php">Zurück</a></th>';
