@@ -26,8 +26,8 @@ if ($conn->connect_error) {
 }
 
 // SQL-Abfrage für Produkte
-
-$sql = "SELECT * FROM products join artists on  products.artist_name = artists.name where products.id = '".$conn->real_escape_string($_GET['id'])."'" ; // Hier kannst du die gewünschte Produkt-ID angeben
+//datenbank noch wechseln
+$sql = "SELECT * FROM products join artists on  products.artist_name = artists.name where products.id = '".$conn->real_escape_string($_GET['id'])."'" ;
 
 $result = $conn->query($sql);
 
@@ -58,7 +58,13 @@ if ($result->num_rows > 0) {
     echo '<tr>';
     echo '<td colspan="3">' . $row['description'] . '</td>';
     echo '</tr>';
-
+    echo '<tr>';
+    echo '<td colspan="3">'. $row['availability'] == 1 ? 'Nicht Vorhanden' : 'Vorhanden' . '</td>';
+    echo '</tr>';
+    echo '<tr>';
+    echo '<th colspan="1"><a href="../tabllenexperiment.php">Zurück</a></th>';
+    echo '<th colspan="2">Warenkorb</th>';
+    echo '</tr>';
     echo '</table>';
 } else {
     echo "Keine Ergebnisse gefunden";

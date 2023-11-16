@@ -3,7 +3,7 @@
 <body>
 
 <?php
-require("connection.php");
+require("connection.php")
 $sql_insert = "INSERT INTO orders VALUES (DEFAULT)";
 $sql_select = "SELECT name FROM artists";
 $select_product_by_artist = "SELECT * from products WHERE artist_name='Benjamin Walker'";
