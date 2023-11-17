@@ -43,3 +43,45 @@
         <img src="/Bildes/Smaragdrubin.jfif">
     </body>
 </html>
+
+// Überprüfen, ob Ergebnisse vorhanden sind
+/* if ($result->num_rows > 0) {
+    // Daten aus der Abfrage abrufen
+    $row = $result->fetch_assoc();
+
+    // HTML-Tabelle mit dynamischen Daten füllen
+    echo '<table cellspacing="0" cellpadding="0">';
+    echo '<tr>';
+
+    echo '<th colspan="3">' . $row['pname'] . '</th>';
+    echo '</tr>';
+    echo '<tr class="cell">';
+    echo '<td>' . $row['artist_name'] . '</a></td>';
+    echo '<td>' . $row['price'] . '€</td>';
+
+    echo '</tr>';
+    echo '<tr>';
+    echo '<td>' . $row['email'] . '</td>';
+    echo '<td>' . $row['category'] . '</td>';
+    echo '</tr>';
+
+    echo '<tr>';
+    echo '<td colspan="3"><img src="../Bildes/' . $row['img_path'] . '" alt="bild von ' . $row['pname'] . '"></td>';
+    echo '</tr>';
+    echo '<tr>';
+    echo '<td colspan="3">' . $row['description'] . '</td>';
+    echo '</tr>';
+    echo '<tr>';
+    if ($row['availability'] == 1) {
+        echo '<td colspan="3">Lagerbestand '. $row['availability'].'</td>'; }
+    else { 
+        echo'<td colspan="3">Nicht auf Lager </td>';}  
+    echo '</tr>';
+    echo '<tr>';
+    echo '<th colspan="1"><a href="../tabllenexperiment.php">Zurück</a></th>';
+    echo '<th colspan="2">Warenkorb</th>';
+    echo '</tr>';
+    echo '</table>';
+} else {
+    echo "Keine Ergebnisse gefunden";
+}
