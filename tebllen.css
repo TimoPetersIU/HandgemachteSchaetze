@@ -1,10 +1,9 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .container{
-    max-width: 864513px;
+    text-align:center ;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 5fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, 5fr));
-    grid-gap: 2vw;
 }
 table{
     position: relative;
@@ -34,4 +33,30 @@ a {
 }
 .cell {
     text-align: centers;
+}
+button{
+    border: none;
+}
+.choice_table{
+    width: 250px;
+    text-decoration: none;
+    color: #000;
+
+}
+.product_image{
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.klick{
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.klick:hover{
+transform:scale(1.1);
+
 }
