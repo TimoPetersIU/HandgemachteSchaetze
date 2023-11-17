@@ -7,8 +7,6 @@ body{
 }
 table{
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
       text-align: center;
       width: 15%;
       background-color: white;
@@ -30,9 +28,10 @@ td {
 }
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 .cell {
-    text-align: centers;
+    text-align: center;
 }
 button{
     border: none;
@@ -50,13 +49,15 @@ button{
     background-repeat: no-repeat;
     background-position: center center;
 }
+
 .klick{
+    margin-right: 45%;
     display: inline-block;
     margin: 10px;
     cursor: pointer;
     transition: all 0.5s;
 }
 .klick:hover{
-transform:scale(1.1);
+transform:scale(1.02);
 
 }

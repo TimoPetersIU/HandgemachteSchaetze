@@ -9,7 +9,7 @@
 <body>
 
 <?php
-
+error_reporting(E_ALL & ~E_WARNING);
 $_GET["id"];
 $_GET["artist_name"];
 // Verbindung zur Datenbank herstellen
@@ -77,22 +77,29 @@ if ($result) {
 //echo "<div class='klick'>";
   //          echo "<a href='Product/product.php?id=$row[id]'> ";
         //    echo" <button class='choice_btn' >";
-                echo "<div class='klick'>";
+        echo "<div class='klick'>";
+        echo "<a href='?id=$row[id]'> ";
                     echo "<table class='choice_table' cellspacing=0 cellpadding=0>";
                         echo '<tr>';
 
-                        echo '<th colspan="3">' . $row['pname'] . '</th>';
+                        echo '<th colspan="4">' . $row['pname'] . '</th>';
                     echo '</tr>';
                     echo '<tr class="cell">';
-                        echo '<td>' . $row['artist_name'] . '</a></td>';
+                        echo '<td><a href="?artist_name='.$row['artist_name'].'">' . $row['artist_name'] . '</a></td>';
+                        echo '<td></td>';
                         echo '<td>' . $row['price'] . '€</td>';
                 
                     echo '</tr>';
                     echo '<tr>';
                         echo '<td>' . $row['email'] . '</td>';
+                        echo '<td></td>';
                         echo '<td>' . $row['category'] . '</td>';
                     echo '</tr>';
-                
+                    echo '<tr>';
+                        echo '<td>geboren:' . $row['date_of_birth'] . '<td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                    echo '</tr>';
                     echo '<tr>';
                         echo '<td colspan="3"><img src="../Bildes/' . $row['img_path'] . '" alt="bild von ' . $row['pname'] . '"></td>';
                     echo '</tr>';
@@ -107,22 +114,18 @@ if ($result) {
                     echo '</tr>';
                     echo '<tr>';
                         echo '<th colspan="1"><a href="../tabllenexperiment.php">Zurück</a></th>';
-                        echo '<th colspan="2">Warenkorb</th>';
+                        echo '<th colspan="4">Warenkorb</th>';
                     echo '</tr>';
                 echo "</table>";
-      //      echo "</button>";
-            echo "</a>";
-            echo "</div>";
-    }
+                echo "</a>";
+                echo "</div>";
     // Verbindung schließen
-} else {
-    echo "Fehler bei der Abfrage: " . $connection->error;
+}
 }
 // Verbindung schließen
 $connection->close();
 ?>
 
 </body>
-
 </html>
 
