@@ -15,7 +15,7 @@ include("./assets/php/navbar.html");
 <div class="navigationBar" id="navigationBar"></div>
 
 <div class="main">
-    <iframe id="dynamic" src="Product/product.html" title="Produkt"></iframe>
+    <iframe id="dynamic" src="Tabllenexperiment.php" title="Produkt"></iframe>
 </div>
 </body>
 </html>
