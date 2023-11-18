@@ -1,13 +1,16 @@
 $(document).ready(function () {
+    // Lese die Produkt-IDs aus der Session-Storage und konvertiere sie zu einer Liste
     var productIdList = stringToList(sessionStorage.getItem("products"));
 
+    // AJAX-Anfrage, um Produktdaten für den Warenkorb zu erhalten
     $.ajax({
-        url: 'get_products_for_shopping_cart.php',
+        url: '../php/get_products_for_shopping_cart.php',
         type: 'POST',
         data: {"productIds": productIdList},
         dataType: 'json',
         success: function (data) {
             console.log(data);
+            // Fülle die Warenkorbtabelle mit den erhaltenen Produktdaten
             fillTable(data);
         },
         error: function errorLog(xhr, status, error) {
@@ -15,11 +18,13 @@ $(document).ready(function () {
         }
     });
 
+    // Funktion zum Befüllen der Warenkorbtabelle mit Produktdaten
     function fillTable(products) {
         var tableBody = $('#productTable tbody');
         var totalPrice = 0;
 
         for (var i = 0; i < products.length; i++) {
+            // Erstelle eine Tabellenzeile für jedes Produkt und füge sie zur Tabelle hinzu
             var row = '<tr><td>' + products[i].pname + '</td><td>' + formatPrice(products[i].price) +
                 '</td><td><button onclick="removeFromProductsList(' + products[i].id + ')">Löschen</button></td></tr>';
             tableBody.append(row);
@@ -39,33 +44,37 @@ $(document).ready(function () {
     }
 });
 
+// Funktion zum Abschicken der Bestellung
 function submitOrder() {
+    // Lese die Produkt-IDs aus der Session-Storage und konvertiere sie zu einer Liste
     var productIds = stringToList(sessionStorage.getItem("products"));
 
+    // AJAX-Anfrage zum Abschicken der Bestellung
     $.ajax({
-        url: 'submit_order.php',
+        url: '../php/submit_order.php',
         type: 'POST',
         data: {"productIds": productIds},
         dataType: 'json',
         success: function (data) {
             console.log('Bestellung erfolgreich abgeschickt:', data);
-            // Hier könntest du zusätzliche Aktionen nach dem Abschicken der Bestellung durchführen
         },
         error: function errorLog(xhr, status, error) {
             console.log('Fehler beim Abschicken der Bestellung:', status, error);
         }
     });
 
-    function stringToList(inputString) {
-        // Entferne die eckigen Klammern und teile den String an den Kommas auf
-        var numbersString = inputString.replace(/\[|\]/g, '');
-        var numbersArray = numbersString.split(',');
+    // Hilfsfunktion zur Konvertierung eines String in eine Liste von Zahlen
+}
 
-        // Konvertiere die Strings zu Zahlen
-        var numbersList = numbersArray.map(function (num) {
-            return parseInt(num, 10);
-        });
+function stringToList(inputString) {
+    // Entferne die eckigen Klammern und teile den String an den Kommas auf
+    var numbersString = inputString.replace(/\[|\]/g, '');
+    var numbersArray = numbersString.split(',');
 
-        return numbersList;
-    }
+    // Konvertiere die Strings zu Zahlen
+    var numbersList = numbersArray.map(function (num) {
+        return parseInt(num, 10);
+    });
+
+    return numbersList;
 }

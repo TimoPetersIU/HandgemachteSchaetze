@@ -102,54 +102,55 @@ body {
     padding: 12px 28px;
 }
 
-form.seachForm {
+/* Style für den Container des Suchformulars */
+form.searchForm {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-select, input.searchInput {
+/* Style für das Dropdown und das Eingabefeld */
+.searchForm select, input.searchInput {
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;
     font-size: 16px;
 }
 
-select {
-    flex: 1; /* Der Select nimmt den verfügbaren Platz ein */
+/* Style für das Dropdown-Auswahlfeld */
+.searchForm select {
+    flex: 1; /* Das Dropdown nimmt den verfügbaren Platz ein */
 }
 
-input.searchInput {
-    flex: 2; /* Das Eingabefeld nimmt doppelt so viel Platz wie der Select ein */
+/* Style für das Eingabefeld */
+.searchForm input.searchInput {
+    flex: 2; /* Das Eingabefeld nimmt doppelt so viel Platz wie das Dropdown ein */
 }
 
-input.searchInput:hover,
-input.searchInput:focus{
+/* Entferne die Umrandung bei Hover und Fokus */
+.searchForm input.searchInput:hover,
+.searchForm input.searchInput:focus {
     outline: none;
 }
 
-input[type="submit"] {
-    padding: 10px 20px;
-    background-color: rgba(0, 136, 169, 1);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+/* Style für input submit */
+.searchForm input[type="submit"] {
+    padding: 10px 20px; /* Innenabstand */
+    background-color: rgba(0, 136, 169, 1); /* Hintergrundfarbe*/
+    color: white; /* Textfarbe weiß*/
+    border: none; /* Keinen border*/
+    border-radius: 5px; /* Abrundung der Ecken*/
+    cursor: pointer; /* Zeiger als Hinweis auf die Klickbarkeit */
+    font-size: 16px; /* Schriftgröße*/
 }
 
-/* Optional: Stil für Hover- und Fokuszustände hinzufügen */
-input[type="submit"]:hover,
-input[type="submit"]:focus {
+
+
+/*Stil für Hover- und Fokuszustände hinzufügen */
+.searchForm input[type="submit"]:hover,
+.searchForm input[type="submit"]:focus {
     background-color: rgba(0, 136, 169, 0.8);
 }
-
-iframe {
-    margin-top: 80px;
-    width: 100%;
-    height: 2000000px;
-}
-
 
 /*Media queries -> navbar soll responsive sein*/
 @media (max-width: 1024px) {

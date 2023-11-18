@@ -28,7 +28,7 @@
                                     $row['img_path'] = 'noimage.png';
                                     }
                                         echo "<div class='klick'>";
-                                        echo "<a href='Product/product.php?id=$row[id]'> ";
+                                        echo "<a href='Product/product.includes?id=$row[id]'> ";
                                             echo "<table class='choice_table' cellspacing=0 cellpadding=0>";
                                             echo "<tr>";
                                             echo "<th class='td pname'>". $row["pname"]."</th>";

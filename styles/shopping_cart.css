@@ -1,0 +1,36 @@
+/* Style für den Warenkorbbereich */
+.warenkorbTB {
+    text-align: center; /* Zentrierte Textausrichtung im Warenkorb */
+    position: absolute;
+    top: 200px; /* Abstand zum oberen Rand der Seite */
+    border: 1px; /* Einfacher Rahmen um den Warenkorbbereich */
+    display: inline-block; /* Inline-Block-Element*/
+}
+
+/* Style für die Navigationsleiste (Navbar) */
+.includeNavbar {
+    z-index: 2; /* Z-Index zur Anzeige über anderen Elementen */
+}
+
+/* Style für den Gesamtpreis im Warenkorb */
+.totalPrice {
+    font-weight: bold; /* Fettgedruckte Schrift für den Gesamtpreis */
+}
+
+/* Style für die Produkttabelle im Warenkorb */
+.productTable table {
+    width: 100%; /* Volle Breite für die Tabelle im Warenkorb */
+    border-collapse: collapse; /* Zusammenführung der Zellenränder für einen einheitlichen Rahmen */
+    margin-bottom: 20px; /* Abstand zum unteren Rand der Tabelle */
+}
+
+/* Style für Tabellen, Tabellenzellen und Tabellenüberschriften im Warenkorb */
+.productTable table, th, td {
+    border: 1px solid black; /* Einfacher schwarzer Rahmen für Tabelle, Überschriften und Zellen */
+}
+
+/* Style für den Inhalt von Tabellenzellen und Überschriften im Warenkorb */
+.productTable th, td {
+    padding: 10px; /* Innenabstand für bessere Lesbarkeit und optische Trennung */
+    text-align: left; /* Linksbündige Textausrichtung für Zelleninhalte */
+}
