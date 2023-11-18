@@ -1,17 +1,20 @@
+// Funktion zum Aktualisieren der Produktliste in der Session-Storage
 function updateProductsList(newProductsList)  {
     sessionStorage.setItem('products', JSON.stringify(newProductsList));
 }
 
+// Funktion zum Abrufen der aktuellen Produkliste aus der Session-Storage
 function getProductsList() {
     var productsList = sessionStorage.getItem('products');
 
-        if (productsList) {
-            return JSON.parse(productsList);
-        } else {
-            return [];
-        }
+    if (productsList) {
+        return JSON.parse(productsList);
+    } else {
+        return [];
+    }
 }
 
+// Funktion zum Hinzufügen einer Produkt-ID zur Produktliste
 function addToProductsList(productId) {
     var currentProductsList = getProductsList();
     if (!currentProductsList.includes(productId)) {
@@ -24,6 +27,7 @@ function addToProductsList(productId) {
     }
 }
 
+// Funktion zum Entfernen einer Produkt-ID aus der Produktliste
 function removeFromProductsList(productId) {
     var currentProductsList = getProductsList();
 
@@ -33,30 +37,16 @@ function removeFromProductsList(productId) {
         currentProductsList.splice(index, 1);
 
         updateProductsList(currentProductsList);
-        location.reload();
+        location.reload(); // Seite aktualisieren, um die Änderungen im Warenkorb anzuzeigen
         console.log('Produkt wurde aus der Liste entfernt.');
     } else {
         console.log('Produkt ist nicht in der Liste.');
     }
-
 }
 
-function stringToList(inputString) {
-    // Entferne die eckigen Klammern und teile den String an den Kommas auf
-    var numbersString = inputString.replace(/\[|\]/g, '');
-    var numbersArray = numbersString.split(',');
-
-    // Konvertiere die Strings zu Zahlen
-    var numbersList = numbersArray.map(function (num) {
-        return parseInt(num, 10);
-    });
-
-    return numbersList;
-}
-
+// Beispielhafte Verwendung: Aktuelle und aktualisierte Produktliste ausgeben
 var currentList = getProductsList();
 console.log('Aktuelle Liste:', currentList);
-
 
 var updatedList = getProductsList();
 console.log('Aktualisierte Liste:', updatedList);

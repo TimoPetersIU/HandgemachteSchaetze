@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handgemachte Schätze</title>
+    <!-- Einbindung von jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="shopping_cart.css">
-    <script src="shopping_cart.js"></script>
-    <script src="genShoppingCart.js"></script>
+    <!-- Einbindung von externen Stylesheets -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/shopping_cart.css">
+    <!-- Einbindung von JavaScript-Dateien für die Warenkorbseite -->
+    <script src="../script/shopping_cart.js"></script>
+    <script src="../script/genShoppingCart.js"></script>
+    <!-- JavaScript-Code zum Einbinden der Nav bar über jQuery -->
     <script>
         $(function () {
-            $("#includeNavbar").load("./assets/php/navbar.html");
+            $("#includeNavbar").load("../assets/includes/navbar.html");
         });
     </script>
 </head>
 <body>
 <div id="includeNavbar" class="includeNavbar"></div>
 
+<!-- Hauptbereich für den Warenkorb -->
 <div class="warenkorbTB">
+    <!-- Tabelle zur Anzeige der Produkte im Warenkorb -->
     <table class="productTable" id="productTable">
         <thead>
         <tr>
@@ -28,6 +34,7 @@
         </thead>
         <tbody></tbody>
     </table>
+<!--    Button zum abschicken einer Bestellung-->
     <button onclick="submitOrder()">Bestellung abschicken</button>
 </div>
 
