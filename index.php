@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangemachte Schätze</title>
+    <link rel="stylesheet" href="style.css">
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
 <body>
-
 <?php
-require("connection.php")
-$sql_insert = "INSERT INTO orders VALUES (DEFAULT)";
-$sql_select = "SELECT name FROM artists";
-$select_product_by_artist = "SELECT * from products WHERE artist_name='Benjamin Walker'";
-$result = $connection->query($sql_select);
-$result_prod_by_artist = $connection->query($select_product_by_artist);
-
-if ($result_prod_by_artist->num_rows > 0) {
-    while ($row = $result_prod_by_artist->fetch_assoc()) {
-        echo "Name: " . $row["name"] . "<br>" . "Beschreibung: " . $row["description"] . "<br><br>";
-    }
-} else {
-    echo "0 RESULTS";
-}
-
-//    if ($connection->query($sql_insert) === TRUE) {
-//        echo "INSERT SUCCESSFUL";
-//    } else {
-//        echo "INSERT FAILED" . $connection->error;
-//    }
-
-
-$connection->close();
+include("./assets/php/navbar.html");
 ?>
+<div class="navigationBar" id="navigationBar"></div>
+
+<div class="main">
+    <iframe id="dynamic" src="Product/product.html" title="Produkt"></iframe>
+</div>
 </body>
 </html>
