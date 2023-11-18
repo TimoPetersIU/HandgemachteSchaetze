@@ -18,18 +18,18 @@ $username = "root";
 $password = "";
 $dbname = "handgemachteschaetze";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$connection = new mysqli($servername, $username, $password, $dbname);
 
 // Überprüfen der Verbindung
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
 
 // SQL-Abfrage für Produkte
 
-$sql = "SELECT * FROM products join artists on  products.artist_name = artists.name where products.id = '".$conn->real_escape_string($_GET['id'])."'" ; // Hier kannst du die gewünschte Produkt-ID angeben
+$sql = "SELECT * FROM products join artists on  products.artist_name = artists.name where products.id = '".$connection->real_escape_string($_GET['id'])."'" ; // Hier kannst du die gewünschte Produkt-ID angeben
 
-$result = $conn->query($sql);
+$result = $connection->query($sql);
 
 // Überprüfen, ob Ergebnisse vorhanden sind
 if ($result->num_rows > 0) {
@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
 // <p><a href="Product/product.php?id=25">cooles zeug</a></p>
 
 // Verbindung schließen
-$conn->close();
+$connection->close();
 ?>
 
 </body>

@@ -4,7 +4,7 @@ $(document).ready(function () {
     $.ajax({
         url: 'get_products.php',
         type: 'POST',
-        data: { "productIds": productIdList },
+        data: {"productIds": productIdList},
         dataType: 'json',
         success: function (data) {
             console.log(data);
@@ -39,9 +39,24 @@ $(document).ready(function () {
     }
 });
 
+function submitOrder() {
+    var productIds = stringToList(sessionStorage.getItem("products"));
 
+    $.ajax({
+        url: 'submit_order.php',
+        type: 'POST',
+        data: {"productIds": productIds},
+        dataType: 'json',
+        success: function (data) {
+            console.log('Bestellung erfolgreich abgeschickt:', data);
+            // Hier könntest du zusätzliche Aktionen nach dem Abschicken der Bestellung durchführen
+        },
+        error: function errorLog(xhr, status, error) {
+            console.log('Fehler beim Abschicken der Bestellung:', status, error);
+        }
+    });
 
-function stringToList(inputString) {
+    function stringToList(inputString) {
         // Entferne die eckigen Klammern und teile den String an den Kommas auf
         var numbersString = inputString.replace(/\[|\]/g, '');
         var numbersArray = numbersString.split(',');
@@ -53,3 +68,4 @@ function stringToList(inputString) {
 
         return numbersList;
     }
+}
