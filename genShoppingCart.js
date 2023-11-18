@@ -2,7 +2,7 @@ $(document).ready(function () {
     var productIdList = stringToList(sessionStorage.getItem("products"));
 
     $.ajax({
-        url: 'get_products.php',
+        url: 'get_products_for_shopping_cart.php',
         type: 'POST',
         data: {"productIds": productIdList},
         dataType: 'json',
