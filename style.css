@@ -87,6 +87,7 @@ body {
 - Bei hover soll die width und height ein wenig wachsen. Außerdem wird die Farbe ein wenig verändert
 */
 .warenkorbBTN {
+    color: white;
     margin-right: 50px;
     padding: 9px 25px;
     background-color: rgba(0, 136, 169, 1);
@@ -101,23 +102,46 @@ body {
     padding: 12px 28px;
 }
 
-/*Definieren des Search input styles
-- Größe definieren
-- Ecken abrunden
-- bei focus soll das input Feld in einer 0.3s transition ein wenig größer werden
-*/
-.searchInput {
-    height: 30px;
-    width: 150px;
-    border: none;
-    border-radius: 60px;
-    transition: width 0.5s, height 0.3s;
+form.seachForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.searchInput:focus {
+select, input.searchInput {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    flex: 1; /* Der Select nimmt den verfügbaren Platz ein */
+}
+
+input.searchInput {
+    flex: 2; /* Das Eingabefeld nimmt doppelt so viel Platz wie der Select ein */
+}
+
+input.searchInput:hover,
+input.searchInput:focus{
     outline: none;
-    height: 40px;
-    width: 180px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: rgba(0, 136, 169, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Optional: Stil für Hover- und Fokuszustände hinzufügen */
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: rgba(0, 136, 169, 0.8);
 }
 
 iframe {

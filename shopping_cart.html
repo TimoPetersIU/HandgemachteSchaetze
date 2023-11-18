@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handgemachte Schätze</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shopping_cart.css">
+    <script src="shopping_cart.js"></script>
+    <script src="genShoppingCart.js"></script>
+    <script>
+        $(function () {
+            $("#includeNavbar").load("./assets/php/navbar.html");
+        });
+    </script>
+</head>
+<body>
+<div id="includeNavbar" class="includeNavbar"></div>
+
+<div class="warenkorbTB">
+    <table class="productTable" id="productTable">
+        <thead>
+        <tr>
+            <th>Produktname</th>
+            <th>Preis</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <button onclick="submitOrder()">Bestellung abschicken</button>
+</div>
+
+</body>
+</html>

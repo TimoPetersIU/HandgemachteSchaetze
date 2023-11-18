@@ -13,6 +13,7 @@ error_reporting(E_ALL & ~E_WARNING);
 $_GET["id"];
 $_GET["artist_name"];
 // Verbindung zur Datenbank herstellen
+
 require("../connection.php");
 
 // SQL-Abfrage für Produkte
@@ -75,6 +76,7 @@ if ($result) {
                 echo "</a>";
                 echo "</div>";
 }
+
 }
 // Verbindung schließen
 $connection->close();
