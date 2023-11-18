@@ -1,30 +1,34 @@
 <?php
 require("connection.php");
 
-$ids = $_POST['ids'];
+if (isset($_POST['productIds']) && !empty($_POST['productIds'])) {
+    $ids = $_POST['productIds'];
 
-$sql = "SELECT pname, price FROM products WHERE id = 15";
+    $productIdList = implode(',', $ids);
 
-$result = $connection->query($sql);
+    $sql = "SELECT id, pname, price FROM products WHERE id IN ($productIdList)";
 
-$data = array();
+    $result = $connection->query($sql);
 
-// Überprüfen, ob Daten vorhanden sind, bevor json_encode aufgerufen wird
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
+    if ($result) {
+        $data = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+
+        header('Content-Type: application/json');
+
+        if (!empty($data)) {
+            echo json_encode($data);
+        } else {
+            echo json_encode(array("message" => "No products found"));
+        }
+    } else {
+        echo json_encode(array("message" => "Error executing query"));
     }
-}
-
-// Setzen Sie den Content-Type-Header auf application/json
-header('Content-Type: application/json');
-
-
-// Verwenden Sie json_encode nur, wenn Daten vorhanden sind
-if (!empty($data)) {
-    echo json_encode($data);
 } else {
-    echo json_encode(array("message" => "No products found"));
+    echo json_encode(array("message" => "No IDs provided"));
 }
 
 $connection->close();

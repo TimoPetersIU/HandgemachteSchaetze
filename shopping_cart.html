@@ -6,6 +6,7 @@
     <title>Handgemachte Schätze</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shopping_cart.css">
     <script src="shopping_cart.js"></script>
     <script src="genShoppingCart.js"></script>
     <script>
@@ -15,17 +16,19 @@
     </script>
 </head>
 <body>
-<div id="includeNavbar"></div>
+<div id="includeNavbar" class="includeNavbar"></div>
 
-<table id="productTable" border="1">
-    <thead>
-    <tr>
-        <th>Produktname</th>
-        <th>Preis</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<div class="warenkorbTB">
+    <table class="productTable" id="productTable">
+        <thead>
+        <tr>
+            <th>Produktname</th>
+            <th>Preis</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 
 </body>
 </html>

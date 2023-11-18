@@ -1,18 +1,33 @@
-table {
+.warenkorbTB {
+    text-align: center;
+}
+
+.productTable {
+    position: absolute;
+    top: 200px;
+    border: 1px;
+    display: inline-block;
+}
+
+.includeNavbar {
+    z-index: 2;
+}
+
+.totalPrice {
+    font-weight: bold;
+}
+
+.productTable table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-table, th, td {
+.productTable table, th, td {
     border: 1px solid black;
 }
 
-th, td {
+.productTable th, td {
     padding: 10px;
     text-align: left;
-}
-
-#totalPrice {
-    font-weight: bold;
 }

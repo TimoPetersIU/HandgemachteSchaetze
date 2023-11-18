@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    var ids = [1, 2, 3];
+    var productIdList = stringToList(sessionStorage.getItem("products"));
 
     $.ajax({
         url: 'get_products.php',
         type: 'POST',
-        data: {"ids": ids},
+        data: { "productIds": productIdList },
         dataType: 'json',
         success: function (data) {
             console.log(data);
@@ -17,11 +17,39 @@ $(document).ready(function () {
 
     function fillTable(products) {
         var tableBody = $('#productTable tbody');
+        var totalPrice = 0;
 
         for (var i = 0; i < products.length; i++) {
-            var row = '<tr><td>' + products[i].productname + '</td><td>' + products[i].price + '</td></tr>';
+            var row = '<tr><td>' + products[i].pname + '</td><td>' + formatPrice(products[i].price) +
+                '</td><td><button onclick="removeFromProductsList(' + products[i].id + ')">Löschen</button></td></tr>';
             tableBody.append(row);
+
+            // Addiere den Preis des aktuellen Produkts zum Gesamtpreis
+            totalPrice += parseFloat(products[i].price);
         }
+
+        // Zeige den Gesamtpreis am Ende der Tabelle an
+        var totalRow = '<tr><td><b>Gesamtpreis</b></td><td><b>' + formatPrice(totalPrice.toFixed(2)) + '</b></td><td></td></tr>';
+        tableBody.append(totalRow);
     }
-})
-;
+
+    // Funktion zur Formatierung des Preises mit Euro-Symbol
+    function formatPrice(price) {
+        return price + ' €';
+    }
+});
+
+
+
+function stringToList(inputString) {
+        // Entferne die eckigen Klammern und teile den String an den Kommas auf
+        var numbersString = inputString.replace(/\[|\]/g, '');
+        var numbersArray = numbersString.split(',');
+
+        // Konvertiere die Strings zu Zahlen
+        var numbersList = numbersArray.map(function (num) {
+            return parseInt(num, 10);
+        });
+
+        return numbersList;
+    }
