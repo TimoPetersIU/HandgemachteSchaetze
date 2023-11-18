@@ -15,10 +15,7 @@ table {
     overflow: hidden;
     margin: 0;
     padding: 0;
-  /*  animation-name: test;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    transition: all 0.5s;*/
+
 }
 th {
     background-color:rgb(230, 103, 191);
@@ -35,8 +32,3 @@ a {
 .cell {
     text-align: centers;
 }
-/*@keyframes test {
-    0%{transform: translateX(-50%) scale(100%) rotate(0deg) translateY(1px);}
-    50%{transform: translateX(-50%) scale(300%) rotate(180deg) translateY(1000px);}
-    100%{transform: translateX(-50%) scale(100%) rotate(360deg) translateY(1px);}
-}*/

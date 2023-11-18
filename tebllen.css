@@ -1,0 +1,61 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    text-align:center ;
+    width: 100%;
+}
+table{
+    position: relative;
+      text-align: center;
+      width: 15%;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+  
+}
+th {
+    background-color:rgb(230, 103, 191);
+    margin: 0;
+    padding: 3px;
+}
+td { 
+    margin: 0;
+    padding: 3px;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.cell {
+    text-align: center;
+}
+
+.choice_table{
+    width: 250px;
+    text-decoration: none;
+    color: #000;
+
+}
+.product_image{
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.klick{
+    margin-right: 45%;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.klick:hover{
+transform:scale(1.02);
+
+}
