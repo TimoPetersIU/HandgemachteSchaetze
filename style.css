@@ -12,6 +12,7 @@ Standart font der Website setzen */
 
 body {
     background-color: lightgrey;
+    display: flex ;
 }
 
 /*Größe und Farbe der navbar definieren.
@@ -167,5 +168,5 @@ select, input {
 iframe {
     margin-top: 80px;
     width: 100%;
-    height: 2345678876543234567876543px;
+    height: 100%;
 }

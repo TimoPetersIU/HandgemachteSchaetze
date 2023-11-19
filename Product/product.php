@@ -6,6 +6,7 @@
     <!-- auf CSS verlinken -->
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
     <script src="../script/shopping_cart.js"></script>
+    
 </head>
 <body>
 
@@ -70,7 +71,7 @@ if ($result) {
                             echo'<td colspan="3">Nicht auf Lager </td>';}  
                     echo '</tr>';
                     echo '<tr>';
-                        echo '<th colspan="1"><a href="javascript:history.back()">Zurüxk</a></th>';
+                        echo '<th colspan="1"><a href="javascript:history.back()">Zurück</a></th>';
                         echo '<th colspan="3"><a onclick="addToProductsList('.$row['id'].')" >Warenkorb</a></th>';
                     echo '</tr>';
                 echo "</table>";
