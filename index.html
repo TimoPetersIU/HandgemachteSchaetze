@@ -15,10 +15,12 @@
 </head>
 <body>
 <div id="includeNavbar"></div>
-<div class="main">
-    <iframe id="dynamic" src="php/alltable.php" title="Produkt"></iframe>
-</div>
-<button style="padding-top: 100px" name="addBtn" class="addBtn" onclick="addToProductsList(3)">Add</button>
+<script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+  </script>
+    <iframe src="php/alltable.php" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 </form>
 </body>
 </html>

@@ -2,9 +2,15 @@
 <html>
     <head>
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#includeNavbar").load("./assets/includes/navbar.html");
+        });
+    </script>
     </head>
     <body class="choice_body">
-    
+    <div id="includeNavbar"></div>
          
                 
                   
@@ -18,7 +24,7 @@
                             if ($connection->connect_error) {
                                 die("Connection failed: " . $connection->connect_error);
                             }
-                            $sql = "SELECT * FROM products where availability = 1";
+                            $sql = "SELECT * FROM products where available = 1";
 
                             // Die Abfrage ausführen und das Ergebnis speichern
                             $result = $connection->query($sql);
