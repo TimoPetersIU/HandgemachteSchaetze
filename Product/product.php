@@ -14,7 +14,7 @@ $_GET["id"];
 $_GET["artist_name"];
 // Verbindung zur Datenbank herstellen
 
-require("../connection.php");
+require("../php/connection.php");
 
 // SQL-Abfrage für Produkte
 if($_GET["id"] > 0){
