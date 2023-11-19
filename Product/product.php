@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Produkt</title>
-    <!-- auf CSS verlinken -->
+    <!-- auf CSS verlinken und quelle für den warenkorb -->
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
     <script src="../script/shopping_cart.js"></script>
     
@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 <?php
-error_reporting(E_ALL & ~E_WARNING);
+error_reporting(E_ALL & ~E_WARNING); //entfernt fehlermeldung da id oder artist_name nicht da sein wird
 $_GET["id"];
 $_GET["artist_name"];
 // Verbindung zur Datenbank herstellen
@@ -31,7 +31,7 @@ $result = $connection->query($sql);
 
 
 if ($result) {
-    // Daten der Db als Tabelle ausgeben und auf der Webseite anzeigen
+    // Daten der Datenbank als Tabelle ausgeben und auf der Webseite anzeigen
     while ($row = $result->fetch_assoc()) {
         if(!file_exists("../Bildes/" . $row['img_path']) || empty($row['img_path'])){
         $row['img_path'] = 'noimage.png';   
@@ -72,6 +72,7 @@ if ($result) {
                             echo'<td colspan="3">Nicht auf Lager </td>';}  
                     echo '</tr>';
                     echo '<tr>';
+                    //zum warenkorb hinzufügen oder auf die zuletzt besucht seite Zurückkehren
                         echo '<th colspan="1"><a href="javascript:history.back()">Zurück</a></th>';
                         echo '<th colspan="3"><a onclick="addToProductsList('.$row['id'].')" >Warenkorb</a></th>';
                     echo '</tr>';
@@ -79,7 +80,7 @@ if ($result) {
                 echo "</a>";
                 echo "</div>";
 }
-// onClick="addToProductList('.$row['id'].')
+
 
 }
 // Verbindung schließen
