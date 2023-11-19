@@ -9,7 +9,7 @@
     
 </head>
 <body>
-
+<div class="container">
 <?php
 error_reporting(E_ALL & ~E_WARNING);
 $_GET["id"];
@@ -84,7 +84,7 @@ if ($result) {
 // Verbindung schließen
 $connection->close();
 ?>
-
+</div>
 </body>
 </html>
 
