@@ -1,10 +1,10 @@
-<?php
+<?php<
 //=======================================================================Timo Peters==================================================>
 // Verbindung zur Datenbank herstellen
 require("connection.php");
 
 // Überprüfen, ob Produkt-IDs im POST-Request vorhanden und nicht leer sind
-if (isset($_POST['productIds']) && !empty($_POST['productIds'])) {
+if (isset($_POST['productIds'])) {
     // Produkt-IDs aus dem POST-Request extrahieren
     $ids = $_POST['productIds'];
 
