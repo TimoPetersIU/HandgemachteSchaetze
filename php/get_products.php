@@ -1,4 +1,5 @@
 <?php
+//==================================================Timo Peters========================================================================>
 // Einbinden der Datei mit der Datenbankverbindung
 require("connection.php");
 
@@ -20,4 +21,5 @@ if ($result->num_rows > 0) {
 
 // Schließen der Datenbankverbindung
 $connection->close();
+//===================================================================================================================
 ?>

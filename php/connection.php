@@ -1,4 +1,6 @@
 <?php
+//=====================================================================================Timo Peters===================================================================================================================================================
+
 // Verbindungsinformationen für die Datenbank
 $servername = "localhost"; // Hostname des Datenbankservers
 $user = "root"; // Benutzername für die Datenbankverbindung
@@ -13,4 +15,5 @@ if ($connection->connect_error) {
     // Ausgabe einer Fehlermeldung und Abbruch des Skripts bei fehlgeschlagener Verbindung
     die("FAILED " . $connection->connect_error);
 }
+//=====================================================================================================================
 ?>

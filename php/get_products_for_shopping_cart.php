@@ -1,4 +1,5 @@
 <?php
+//=======================================================================Timo Peters==================================================>
 // Verbindung zur Datenbank herstellen
 require("connection.php");
 
@@ -46,4 +47,5 @@ if (isset($_POST['productIds']) && !empty($_POST['productIds'])) {
 
 // Verbindung zur Datenbank schließen
 $connection->close();
+//=================================================================================================================================
 ?>
