@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<body>
 <?php
 require("connection.php");
 //$servername = "localhost";
@@ -24,4 +22,3 @@ if ($connection->query($sql_insert) === TRUE) {
 $connection->close();
 
 ?>
-</body>

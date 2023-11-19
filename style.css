@@ -110,7 +110,7 @@ form.searchForm {
 }
 
 /* Style für das Dropdown und das Eingabefeld */
-.searchForm select, input.searchInput {
+select, input {
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;

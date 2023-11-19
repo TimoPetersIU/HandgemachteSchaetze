@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handgemachte Schaetze</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!--    <script>-->
+<!--        $(function () {-->
+<!--            $("#includeNavbar").load("./assets/includes/navbar.html");-->
+<!--        });-->
+<!--    </script>-->
+</head>
+<body>
+<h2>New Product Form</h2>
+
+<form action="../php/new_product.php" method="post">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea><br>
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="Textil">Textil</option>
+        <option value="Schmuck">Schmuck</option>
+        <option value="Kunst">Kunst</option>
+    </select><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required><br>
+
+    <label for="price">Künstler</label>
+    <input type="text" id="artist_name" name="price" required><br>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
