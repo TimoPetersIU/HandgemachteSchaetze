@@ -65,8 +65,8 @@ if ($result) {
                         echo '<td colspan="3">' . $row['description'] . '</td>';
                     echo '</tr>';
                     echo '<tr>';
-                        if ($row['availability'] == 1) {
-                            echo '<td colspan="3">Lagerbestand '. $row['availability'].'</td>'; }
+                        if ($row['available'] == 1) {
+                            echo '<td colspan="3">Lagerbestand '. $row['available'].'</td>'; }
                         else { 
                             echo'<td colspan="3">Nicht auf Lager </td>';}  
                     echo '</tr>';

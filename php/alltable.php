@@ -19,7 +19,7 @@
                             if ($connection->connect_error) {
                                 die("Connection failed: " . $connection->connect_error);
                             }
-                            $sql = "SELECT * FROM products where availability = 1";
+                            $sql = "SELECT * FROM products where available = 1";
 
                             // Die Abfrage ausführen und das Ergebnis speichern
                             $result = $connection->query($sql);

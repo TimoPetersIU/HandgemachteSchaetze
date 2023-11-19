@@ -12,7 +12,6 @@ Standart font der Website setzen */
 
 body {
     background-color: lightgrey;
-    display: flex ;
 }
 
 /*Größe und Farbe der navbar definieren.
