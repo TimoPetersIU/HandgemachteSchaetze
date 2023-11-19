@@ -1,3 +1,4 @@
+// ======================================================================Timo Peters===================================================================================================>>
 $(document).ready(function () {
     // Lese die Produkt-IDs aus der Session-Storage und konvertiere sie zu einer Liste
     if (sessionStorage.getItem("products") != null) {
@@ -80,3 +81,4 @@ function stringToList(inputString) {
 
     return numbersList;
 }
+// ===========================================================================================================================

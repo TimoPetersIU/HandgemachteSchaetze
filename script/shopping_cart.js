@@ -1,3 +1,5 @@
+// ======================================================================Timo Peters===================================================================================================>>
+
 // Funktion zum Aktualisieren der Produktliste in der Session-Storage
 function updateProductsList(newProductsList)  {
     sessionStorage.setItem('products', JSON.stringify(newProductsList));
@@ -50,3 +52,5 @@ console.log('Aktuelle Liste:', currentList);
 
 var updatedList = getProductsList();
 console.log('Aktualisierte Liste:', updatedList);
+
+// ================================================================================================================================
