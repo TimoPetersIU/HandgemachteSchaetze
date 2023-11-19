@@ -5,9 +5,11 @@
     <title>Produkt</title>
     <!-- auf CSS verlinken -->
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="../script/shopping_cart.js"></script>
+    
 </head>
 <body>
-
+<div class="container">
 <?php
 error_reporting(E_ALL & ~E_WARNING);
 $_GET["id"];
@@ -57,31 +59,32 @@ if ($result) {
                         echo '<td></td>';
                     echo '</tr>';
                     echo '<tr>';
-                        echo '<td colspan="3"><img src="../Bildes/' . $row['img_path'] . '" alt="bild von ' . $row['pname'] . '"></td>';
+                        echo '<td colspan="3"><div class = "product_image" style="background-image:url(../Bildes/' . $row['img_path'] . ');"></div></td>';
                     echo '</tr>';
                     echo '<tr>';
                         echo '<td colspan="3">' . $row['description'] . '</td>';
                     echo '</tr>';
                     echo '<tr>';
-                        if ($row['availability'] == 1) {
-                            echo '<td colspan="3">Lagerbestand '. $row['availability'].'</td>'; }
+                        if ($row['available'] == 1) {
+                            echo '<td colspan="3">Lagerbestand '. $row['available'].'</td>'; }
                         else { 
                             echo'<td colspan="3">Nicht auf Lager </td>';}  
                     echo '</tr>';
                     echo '<tr>';
-                        echo '<th colspan="1"><a href="../tabllenexperiment.php">Zurück</a></th>';
-                        echo '<th colspan="4">Warenkorb</th>';
+                        echo '<th colspan="1"><a href="javascript:history.back()">Zurück</a></th>';
+                        echo '<th colspan="3"><a onclick="addToProductsList('.$row['id'].')" >Warenkorb</a></th>';
                     echo '</tr>';
                 echo "</table>";
                 echo "</a>";
                 echo "</div>";
 }
+// onClick="addToProductList('.$row['id'].')
 
 }
 // Verbindung schließen
 $connection->close();
 ?>
-
+</div>
 </body>
 </html>
 

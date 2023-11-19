@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body>
 <?php
 // Einbinden der Datenbankverbindung
 require("connection.php");
@@ -11,7 +17,19 @@ if ($result->num_rows > 0) {
     // Schleife durch alle Ergebniszeilen
     while ($row = $result->fetch_assoc()) {
         // Ausgabe der Künstlerinformationen (Name und Geburtsdatum)
-        echo "Name: " . $row["name"] . "<br>" . "Geburtsdatum: " . $row["date_of_birth"] . "<br><br>";
+        echo "<div class='klick'>";
+        echo "<a href='../Product/product.php?artist_name=".$row['name']."'>";
+        echo "<table class='choice_table' cellspacing=0 cellpadding=0>";
+        echo "<tr>";
+        echo "<th>" . $row["name"] . "</td>";
+        echo "</tr>";
+        echo "<tr>";
+        echo "<td> Geburtsdatum: ".$row["date_of_birth"]."</td>";
+        echo"</tr>";
+        echo "</table>";
+        echo "</a>";
+        echo "</div>";
+      //  echo "Name: " . $row["name"] . "<br>" . "Geburtsdatum: " . $row["date_of_birth"] . "<br><br>";
     }
 } else {
     // Ausgabe bei keinem Ergebnis
@@ -21,3 +39,5 @@ if ($result->num_rows > 0) {
 // Schließen der Datenbankverbindung
 $connection->close();
 ?>
+    </body>
+</html>
