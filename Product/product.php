@@ -5,7 +5,7 @@
     <title>Produkt</title>
     <!-- auf CSS verlinken -->
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
-    <script>src="../script/shopping_cart.js"</script>
+    <script src="../script/shopping_cart.js"></script>
 </head>
 <body>
 
@@ -70,13 +70,14 @@ if ($result) {
                             echo'<td colspan="3">Nicht auf Lager </td>';}  
                     echo '</tr>';
                     echo '<tr>';
-                        echo '<th colspan="1"><a href="../tabllenexperiment.php">Zurück</a></th>';
-                        echo '<th colspan="4"><button onClick="addToProductList('.$row['id'].')>Warenkorb</button></th>';
+                        echo '<th colspan="1"><a href="javascript:history.back()">Zurüxk</a></th>';
+                        echo '<th colspan="3"><a onclick="addToProductsList('.$row['id'].')" >Warenkorb</a></th>';
                     echo '</tr>';
                 echo "</table>";
                 echo "</a>";
                 echo "</div>";
 }
+// onClick="addToProductList('.$row['id'].')
 
 }
 // Verbindung schließen
