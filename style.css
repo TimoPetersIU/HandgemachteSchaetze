@@ -128,13 +128,13 @@ select, input {
 }
 
 /* Entferne die Umrandung bei Hover und Fokus */
-.searchForm input.searchInput:hover,
-.searchForm input.searchInput:focus {
+input.searchInput:hover,
+input.searchInput:focus {
     outline: none;
 }
 
 /* Style für input submit */
-.searchForm input[type="submit"] {
+input[type="submit"] {
     padding: 10px 20px; /* Innenabstand */
     background-color: rgba(0, 136, 169, 1); /* Hintergrundfarbe*/
     color: white; /* Textfarbe weiß*/
@@ -147,8 +147,8 @@ select, input {
 
 
 /*Stil für Hover- und Fokuszustände hinzufügen */
-.searchForm input[type="submit"]:hover,
-.searchForm input[type="submit"]:focus {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
