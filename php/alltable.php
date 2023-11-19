@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--verlinkt auf css und der script teil war ein versuch die Navigationsleiste anzuzeigen, hat nicht funktioniert.-->
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
@@ -15,7 +16,7 @@
          
                 
                   
-              
+              <!--der container verschachtelt alles das es gleichmäßig über die seite relativ gleich groß die pordukte anzeigt.-->
                 <div class="container">
                     <div class="table_div container">
                         <?php
@@ -25,11 +26,11 @@
                             if ($connection->connect_error) {
                                 die("Connection failed: " . $connection->connect_error);
                             }
+                            //hier sollen alle produkte angezeigt werden die auf lager sind.
                             $sql = "SELECT * FROM products where available = 1";
 
-                            // Die Abfrage ausführen und das Ergebnis speichern
                             $result = $connection->query($sql);
-                            
+                            //trägt alles in Tabellen ein bis alles aus der Datenbank ausgewählt wurde
                             if ($result) {
                                 while ($row = $result->fetch_assoc()) {
                                     if(!file_exists("../Bildes/" . $row['img_path']) || empty($row['img_path'])){

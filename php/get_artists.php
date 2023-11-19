@@ -31,7 +31,6 @@ if ($result->num_rows > 0) {
         echo "</table>";
         echo "</a>";
         echo "</div>";
-      //  echo "Name: " . $row["name"] . "<br>" . "Geburtsdatum: " . $row["date_of_birth"] . "<br><br>";
     }
 } else {
     // Ausgabe bei keinem Ergebnis
