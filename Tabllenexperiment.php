@@ -4,10 +4,7 @@
     <link href="tebllen.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
     <body class="choice_body">
-            <div class="">
-                <div class="">
-                    <h1>Unsere Künstler</h1>
-                </div>
+    
                 <div class="container">
                     <div class="table_div container">
                         <?php
@@ -43,7 +40,7 @@
                                             echo "</tr>";
                                             echo "<tr>";
                                         
-                                            echo "<td class='td Künstler'>". $row["category"]." by " . $row["artist_name"]."</td>";
+                                            echo "<td class='td Künstler'>". $row["category"]." by <a href='Product/product.php?artist_name=".$row['artist_name']."'>" . $row['artist_name'] ."</a></td>";
                                             echo "</tr>";
                                            
                                             echo "</table>";
@@ -59,6 +56,6 @@
                         ?> 
                     </div>
                 </div>
-            </div>
+            
     </body>
 </html>
