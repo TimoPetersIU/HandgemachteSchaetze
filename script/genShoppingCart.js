@@ -1,22 +1,24 @@
 $(document).ready(function () {
     // Lese die Produkt-IDs aus der Session-Storage und konvertiere sie zu einer Liste
-    var productIdList = stringToList(sessionStorage.getItem("products"));
+    if (sessionStorage.getItem("products") != null) {
+        var productIdList = stringToList(sessionStorage.getItem("products"));
 
-    // AJAX-Anfrage, um Produktdaten für den Warenkorb zu erhalten
-    $.ajax({
-        url: '../php/get_products_for_shopping_cart.php',
-        type: 'POST',
-        data: {"productIds": productIdList},
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            // Fülle die Warenkorbtabelle mit den erhaltenen Produktdaten
-            fillTable(data);
-        },
-        error: function errorLog(xhr, status, error) {
-            console.log('Fehler beim Laden der Daten.', status, error);
-        }
-    });
+        // AJAX-Anfrage, um Produktdaten für den Warenkorb zu erhalten
+        $.ajax({
+            url: '../php/get_products_for_shopping_cart.php',
+            type: 'POST',
+            data: {"productIds": productIdList},
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                // Fülle die Warenkorbtabelle mit den erhaltenen Produktdaten
+                fillTable(data);
+            },
+            error: function errorLog(xhr, status, error) {
+                console.log('Fehler beim Laden der Daten.', status, error);
+            }
+        });
+    }
 
     // Funktion zum Befüllen der Warenkorbtabelle mit Produktdaten
     function fillTable(products) {
@@ -26,7 +28,7 @@ $(document).ready(function () {
         for (var i = 0; i < products.length; i++) {
             // Erstelle eine Tabellenzeile für jedes Produkt und füge sie zur Tabelle hinzu
             var row = '<tr><td>' + products[i].pname + '</td><td>' + formatPrice(products[i].price) +
-                '</td><td><button onclick="removeFromProductsList(' + products[i].id + ')">Löschen</button></td></tr>';
+                '</td><td><button onclick="removeFromProductsList(' + products[i].id + ')"><img class="deleteBTN" src="../assets/delete.png"></button></td></tr>';
             tableBody.append(row);
 
             // Addiere den Preis des aktuellen Produkts zum Gesamtpreis

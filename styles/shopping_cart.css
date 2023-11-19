@@ -33,4 +33,32 @@
 .productTable th, td {
     padding: 10px; /* Innenabstand für bessere Lesbarkeit und optische Trennung */
     text-align: left; /* Linksbündige Textausrichtung für Zelleninhalte */
+
+}
+
+.productTable th {
+    background-color: #1B6BA7FF;
+}
+
+.productTable tbody {
+    background-color: #67BDFFFF;
+}
+
+/* Stile für den Button */
+.submitOrderBTN {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submitOrderBTN:hover {
+    background-color: #45a049;
+}
+
+.deleteBTN {
+    width: 20px;
+    cursor: pointer;
 }
