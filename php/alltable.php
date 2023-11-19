@@ -2,10 +2,15 @@
 <html>
     <head>
     <link href="../tebllen.css" rel="stylesheet" type="text/css" media="screen" />
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#includeNavbar").load("./assets/includes/navbar.html");
+        });
+    </script>
     </head>
     <body class="choice_body">
-    
+    <div id="includeNavbar"></div>
          
                 
                   

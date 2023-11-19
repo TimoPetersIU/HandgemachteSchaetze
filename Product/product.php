@@ -59,7 +59,7 @@ if ($result) {
                         echo '<td></td>';
                     echo '</tr>';
                     echo '<tr>';
-                        echo '<td colspan="3"><img src="../Bildes/' . $row['img_path'] . '" alt="bild von ' . $row['pname'] . '"></td>';
+                        echo '<td colspan="3"><div class = "product_image" style="background-image:url(../Bildes/' . $row['img_path'] . ');"></div></td>';
                     echo '</tr>';
                     echo '<tr>';
                         echo '<td colspan="3">' . $row['description'] . '</td>';
