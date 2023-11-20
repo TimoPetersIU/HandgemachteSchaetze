@@ -88,7 +88,7 @@ Sein Geburtsdatum
 
 W3Schools.  'W3Schools'. Verfügbar unter: https://www.w3schools.com/ 
 
-Zugriff am 19. November 2023. 
+Zugriff am 12. November 2023. 
 
 jQuery Foundation.  'jQuery.ajax() | jQuery API Documentation'. Verfügbar unter: https://api.jquery.com/jQuery.ajax/ 
 
